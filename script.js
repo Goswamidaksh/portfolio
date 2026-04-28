@@ -59,4 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // 4. Initialize 3D Vanilla Tilt for Glass Cards
+    if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".glass-card"), {
+            max: 12,           // max tilt rotation (degrees)
+            speed: 400,        // Speed of the enter/exit transition
+            glare: true,       // if it should have a "glare" effect
+            "max-glare": 0.15, // the maximum "glare" opacity
+            perspective: 1000, // Transform perspective
+            scale: 1.02        // Slight zoom on hover
+        });
+    }
 });

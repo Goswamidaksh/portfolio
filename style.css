@@ -66,6 +66,7 @@ body {
     border-radius: 20px;
     box-shadow: var(--glass-shadow);
     padding: 40px;
+    transform-style: preserve-3d;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
 }
 
@@ -94,11 +95,14 @@ body {
     text-decoration: none;
     font-weight: 400;
     font-size: 0.9rem;
-    transition: color 0.3s;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s, text-shadow 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--text-main);
+    transform: scale(1.15) translateY(-3px);
+    text-shadow: 0 5px 15px rgba(41, 151, 255, 0.6);
 }
 
 /* Typography & Layout Utility */
@@ -185,7 +189,8 @@ body {
     font-weight: 500;
     border-radius: 30px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s, background-color 0.3s;
 }
 
 .btn-primary {
@@ -195,7 +200,8 @@ body {
 
 .btn-primary:hover {
     background-color: #e0e0e0;
-    transform: scale(1.02);
+    transform: scale(1.1) translateZ(20px);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.2);
 }
 
 .btn-secondary {
@@ -208,6 +214,8 @@ body {
 .btn-secondary:hover {
     background-color: rgba(255,255,255,0.1);
     border-color: rgba(255,255,255,0.3);
+    transform: scale(1.1) translateZ(20px);
+    box-shadow: 0 10px 25px rgba(41, 151, 255, 0.2);
 }
 
 /* Skills Section */
@@ -229,18 +237,21 @@ body {
     color: var(--accent);
     margin-bottom: 25px;
     border: 1px solid rgba(41, 151, 255, 0.2);
+    transform: translateZ(50px);
 }
 
 .skill-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 12px;
+    transform: translateZ(40px);
 }
 
 .skill-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
+    transform: translateZ(20px);
 }
 
 /* Projects Section (Case Studies) */
@@ -264,6 +275,7 @@ body {
     letter-spacing: 1px;
     font-weight: 600;
     margin-bottom: 15px;
+    transform: translateZ(30px);
 }
 
 .project-content h3 {
@@ -271,6 +283,7 @@ body {
     font-weight: 600;
     margin-bottom: 15px;
     letter-spacing: -0.5px;
+    transform: translateZ(50px);
 }
 
 .project-content p {
@@ -278,6 +291,7 @@ body {
     font-size: 1.05rem;
     margin-bottom: 30px;
     line-height: 1.7;
+    transform: translateZ(30px);
 }
 
 .case-study-link {
@@ -288,11 +302,13 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateZ(40px);
 }
 
 .case-study-link:hover {
     opacity: 0.7;
+    transform: translateZ(50px) scale(1.05);
 }
 
 /* Contact Section */
@@ -306,18 +322,21 @@ body {
     font-weight: 600;
     letter-spacing: -1px;
     margin-bottom: 20px;
+    transform: translateZ(50px);
 }
 
 .contact-card p {
     color: var(--text-muted);
     font-size: 1.2rem;
     margin-bottom: 40px;
+    transform: translateZ(30px);
 }
 
 .contact-links {
     display: flex;
     justify-content: center;
     gap: 20px;
+    transform: translateZ(60px);
 }
 
 .contact-pill {
@@ -331,12 +350,13 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s, color 0.3s;
 }
 
 .contact-pill:hover {
     background: var(--text-main);
     color: var(--bg-color);
+    transform: scale(1.1) translateZ(20px);
 }
 
 /* Footer */
