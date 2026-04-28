@@ -63,11 +63,12 @@ body {
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
-    border-radius: 20px;
+    /* Default fallback radius */
+    border-radius: 20px; 
     box-shadow: var(--glass-shadow);
     padding: 40px;
     transform-style: preserve-3d;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, border-radius 0.4s ease;
 }
 
 .glass-card:hover {
@@ -225,6 +226,20 @@ body {
     gap: 30px;
 }
 
+/* Organic Fluid Blob Shape for Skill Cards */
+.skills-grid .glass-card {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    padding: 50px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-grid .glass-card:hover {
+    border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+}
+
 .icon-wrapper {
     height: 60px;
     width: 60px;
@@ -261,11 +276,18 @@ body {
     gap: 40px;
 }
 
+/* Asymmetrical Futuristic Shape for Project Cards */
 .project-card {
     padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 40px 0px 40px 0px !important;
+    border-left: 3px solid var(--accent) !important;
+}
+
+.project-card:hover {
+    border-radius: 0px 40px 0px 40px !important;
 }
 
 .project-meta {
@@ -315,6 +337,7 @@ body {
 .contact-card {
     text-align: center;
     padding: 80px 40px;
+    border-radius: 60px !important; /* Ultra-rounded pill shape */
 }
 
 .contact-card h2 {
