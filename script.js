@@ -1,6 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Intersection Observer for Smooth Scroll Animations
+    // 1. Initialize Vanta.js 3D Neural Network
+    if (window.VANTA) {
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x2997ff, // Apple Blue Nodes
+            backgroundColor: 0x020308, // Deep Luxury Black/Blue
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 18.00,
+            showDots: true
+        });
+    }
+
+    // 2. Intersection Observer for Smooth Scroll Animations
     const faders = document.querySelectorAll('.fade-in');
 
     const appearOptions = {
@@ -23,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         appearOnScroll.observe(fader);
     });
 
-    // 2. Smooth scrolling for navigation links
+    // 3. Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
