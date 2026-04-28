@@ -1,23 +1,61 @@
-/* Base Variables & Setup - MINIMAL LUXURY (APPLE/TESLA) */
+/* Base Variables & Setup - HIGH CONTRAST NEON */
 :root {
     --bg-color: #020308; /* Deep rich black/blue */
     --text-main: #ffffff;
-    --text-muted: #86868b; /* Apple-style muted gray */
-    --accent: #2997ff; /* Apple Blue */
-    --accent-hover: #147ce5;
+    --text-muted: #a1a1aa; /* Brighter gray for better reading */
+    --accent: #00f3ff; /* High-Visibility Neon Cyan */
+    --accent-hover: #00c3cc;
     
     /* Frosted Glass Variables */
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.08); /* Brighter glass base */
+    --glass-border: rgba(0, 243, 255, 0.3); /* Cyan tinted border for visibility */
     --glass-blur: blur(24px);
-    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
 }
 
+/* Custom Cursor Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    cursor: none !important; /* Hide default cursor */
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    position: fixed;
+    top: 0; left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--accent);
+    position: fixed;
+    top: 0; left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transition: width 0.2s, height 0.2s;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2) inset;
+}
+
+/* Enlarge cursor when hovering over links/buttons */
+a:hover ~ .cursor-outline, 
+button:hover ~ .cursor-outline,
+.glass-card:hover ~ .cursor-outline {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 243, 255, 0.1);
 }
 
 html {
@@ -73,8 +111,9 @@ body {
 
 .glass-card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 243, 255, 0.05); /* Neon cyan glow */
+    border: 1px solid rgba(0, 243, 255, 0.6);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
 }
 
 /* Navigation */
@@ -103,7 +142,7 @@ body {
 .nav-links a:hover {
     color: var(--text-main);
     transform: scale(1.15) translateY(-3px);
-    text-shadow: 0 5px 15px rgba(41, 151, 255, 0.6);
+    text-shadow: 0 5px 15px var(--accent);
 }
 
 /* Typography & Layout Utility */
@@ -213,10 +252,10 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.3);
+    background-color: rgba(0, 243, 255, 0.1);
+    border-color: var(--accent);
     transform: scale(1.1) translateZ(20px);
-    box-shadow: 0 10px 25px rgba(41, 151, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 243, 255, 0.3);
 }
 
 /* Skills Section */
@@ -243,7 +282,7 @@ body {
 .icon-wrapper {
     height: 60px;
     width: 60px;
-    background: rgba(41, 151, 255, 0.1);
+    background: rgba(0, 243, 255, 0.1);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -251,7 +290,7 @@ body {
     font-size: 1.8rem;
     color: var(--accent);
     margin-bottom: 25px;
-    border: 1px solid rgba(41, 151, 255, 0.2);
+    border: 1px solid rgba(0, 243, 255, 0.3);
     transform: translateZ(50px);
 }
 

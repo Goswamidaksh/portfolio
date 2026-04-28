@@ -1,5 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     
+    // 0. Custom Cursor Logic
+    const cursorDot = document.querySelector("[data-cursor-dot]");
+    const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+    if (cursorDot && cursorOutline) {
+        window.addEventListener("mousemove", function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Dot follows exactly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Outline follows with a smooth delay
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+    }
+
     // 1. Initialize Vanta.js 3D Neural Network
     if (window.VANTA) {
         VANTA.NET({
@@ -11,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
             minWidth: 200.00,
             scale: 1.00,
             scaleMobile: 1.00,
-            color: 0x2997ff, // Apple Blue Nodes
+            color: 0x00f3ff, // Neon Cyan High Contrast Nodes
             backgroundColor: 0x020308, // Deep Luxury Black/Blue
-            points: 12.00,
+            points: 14.00,
             maxDistance: 22.00,
             spacing: 18.00,
             showDots: true
